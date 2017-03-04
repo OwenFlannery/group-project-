@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+
+    <title></title>
+
+    <style>
+    </style>
+
+
+    <script type="text/javascript">
+        function welcome()
+        {/*-------------------------------------------------script to create a popup for error message----------------------------------*/
+            alert("A Error has occored please review your details ");
+        }
+    </script>
+
+</head>
+
+
+<header>
+
+</header>
+<body>
+
+<!***************************************search bar and nav bar ******************************>
+<div class="search_nav">
+    <form method="post" action="search.php?go" id="search_form">
+        <input type="text" name="search_bar" placeholder="search book titles">
+        <input type="submit" name="submit" value="search">
+    </form>
+
+    <nav>
+        <ul class="nav_ul">
+            <li class="nav_li"><a href="/./public/index1.php" title=" Home ">Home</a></li>
+            <li class="nav_li"><a class="current_page"  href="trade.php" title=" Tradable Books ">Tradable Books</a></li>
+            <li class="nav_li"><a href="new.php" title=" Contact Us ">New Books</a></li>
+            <li class="nav_li"><a href="contact_us.php" title=" Contact Us ">Contact Us</a></li>
+        </ul>
+    </nav>
+</div>
+
+<div>
+    <section class="login">
+        <form action="paymentSuc.html"  methods="post">
+
+            <h1>Payment Form</h1>
+
+            <input type="radio" name="visa"/>
+            <img src="/./images/visa.jpg">
+
+            <input type="radio" name="mastercard"/>
+            <img src="/./images/m_card.jpg">
+
+            <input type="radio" name="visa_debt"/>
+            <img src="/./images/v_debt.jpg">
+
+            email:
+            <input type=email" size="10" maxlength="40" name="email">
+
+            address line 1:
+            <input type=address" size="10" maxlength="40" name="address1">
+
+            address line 2:
+            <input type=email" size="10" maxlength="40" name="address2">
+
+            address line 3:
+            <input type=email" size="10" maxlength="40" name="address3">
+
+
+            card number:
+            <input type="number" min ="16" size="16" maxlength="16" name="card_number">
+
+            expiry date:
+            <input type="date" size="10" maxlength="40" name="ex_date">
+
+            security code:
+            <input type="number" min="3" size="3" maxlength="3" name="security_code">
+
+
+            <section class ="button">
+            <input type="submit" value="submit"> <input type="reset" value="reset">
+            <br>
+            </section>
+        </form>
+    </section>
+</div>
+
+</body>
+
+<footer>
+
+</footer>
+
+</html>

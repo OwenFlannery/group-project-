@@ -55,6 +55,22 @@ if (isset($_SESSION['username'])){
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
     <body>
+    <!***************************************search bar and nav bar ******************************>
+    <div class="search_nav">
+        <form method="post" action="search.php?go" id="search_form">
+            <input type="text" name="search_bar" placeholder="search book titles">
+            <input type="submit" name="submit" value="search">
+        </form>
+
+        <nav>
+            <ul class="nav_ul">
+                <li class="nav_li"><a href="/./public/index1.php" title=" Home ">Home</a></li>
+                <li class="nav_li"><a class="current_page"  href="trade.php" title=" Tradable Books ">Tradable Books</a></li>
+                <li class="nav_li"><a href="new.php" title=" Contact Us ">New Books</a></li>
+                <li class="nav_li"><a href="contact_us.php" title=" Contact Us ">Contact Us</a></li>
+            </ul>
+        </nav>
+    </div>
 
     <div class="container">
         <form class="form-signin" method="POST">

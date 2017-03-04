@@ -80,7 +80,7 @@ if(isset($_GET["action"]))
     </div>
 </header>
 <div class="mySidebar">
-    awfa
+    side nav for options
 </div>
 
 
