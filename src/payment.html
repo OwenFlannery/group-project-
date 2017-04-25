@@ -6,8 +6,8 @@
 
     <title></title>
 
-    <style>
-    </style>
+
+        <link rel="stylesheet" type="text/css" href="/./css/styles.css">
 
 
     <script type="text/javascript">
@@ -19,29 +19,26 @@
 
 </head>
 
-
-<header>
-
-</header>
 <body>
-
-<!***************************************search bar and nav bar ******************************>
-<div class="search_nav">
-    <form method="post" action="search.php?go" id="search_form">
-        <input type="text" name="search_bar" placeholder="search book titles">
-        <input type="submit" name="submit" value="search">
-    </form>
-
-    <nav>
-        <ul class="nav_ul">
-            <li class="nav_li"><a href="/./public/index1.php" title=" Home ">Home</a></li>
-            <li class="nav_li"><a class="current_page"  href="trade.php" title=" Tradable Books ">Tradable Books</a></li>
-            <li class="nav_li"><a href="new.php" title=" Contact Us ">New Books</a></li>
-            <li class="nav_li"><a href="contact_us.php" title=" Contact Us ">Contact Us</a></li>
-        </ul>
-    </nav>
-</div>
-
+<header>
+    <!***************************************search bar and nav bar ******************************>
+    <div class="search_nav">
+        <form method="post" action="/./src/search.php?go" id="search_form">
+            <input type="text" name="search_bar" placeholder="search book titles">
+            <input type="submit" name="submit" value="search">
+        </form>
+        <nav>
+            <ul class="nav_ul">
+                <li class="nav_li"><a href="/./public/index.php" title=" Home ">Home</a></li>
+                <li class="nav_li"><a class="current_page"  href="/./src/trade.php" title=" Tradable Books ">Tradable Books</a></li>
+                <li class="nav_li"><a href="/./src/new.php" title=" Contact Us ">New Books</a></li>
+                <li class="nav_li"><a href="/./src/contact_us.php" title=" Contact Us ">Contact Us</a></li>
+                <li class="nav_li"><a href="/./src/submitBook.php" title=" Submit ">Submit Book</a></li>
+                <li class="nav_li"><a href="/./src/login.php" title=" Login ">Login</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 <div>
     <section class="login">
         <form action="paymentSuc.html"  methods="post">
@@ -49,13 +46,13 @@
             <h1>Payment Form</h1>
 
             <input type="radio" name="visa"/>
-            <img src="/./images/visa.jpg">
+            <img src="/./images/visa.jpg" class="card_image">
 
             <input type="radio" name="mastercard"/>
-            <img src="/./images/m_card.jpg">
+            <img src="/./images/m_card.jpg" class="card_image">
 
             <input type="radio" name="visa_debt"/>
-            <img src="/./images/v_debt.jpg">
+            <img src="/./images/v_debt.jpg" class="card_image">
 
             email:
             <input type=email" size="10" maxlength="40" name="email">
@@ -69,7 +66,6 @@
             address line 3:
             <input type=email" size="10" maxlength="40" name="address3">
 
-
             card number:
             <input type="number" min ="16" size="16" maxlength="16" name="card_number">
 
@@ -78,7 +74,6 @@
 
             security code:
             <input type="number" min="3" size="3" maxlength="3" name="security_code">
-
 
             <section class ="button">
             <input type="submit" value="submit"> <input type="reset" value="reset">

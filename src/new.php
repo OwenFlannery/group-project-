@@ -64,25 +64,25 @@ if(isset($_GET["action"]))
 <header>
     <!***************************************search bar and nav bar ******************************>
     <div class="search_nav">
-        <form method="post" action="search.php?go" id="search_form">
+        <form method="post" action="/./src/search.php?go" id="search_form">
             <input type="text" name="search_bar" placeholder="search book titles">
             <input type="submit" name="submit" value="search">
         </form>
-
         <nav>
             <ul class="nav_ul">
-                <li class="nav_li"><a href="/./public/index1.php" title=" Home ">Home</a></li>
-                <li class="nav_li"><a href="trade.php" title=" Tradable Books ">Tradable Books</a></li>
-                <li class="nav_li"><a class="current_page" href="new.php" title=" NEW Books ">New Books</a></li>
-                <li class="nav_li"><a href="contact_us.php" title=" Contact Us ">Contact Us</a></li>
+                <li class="nav_li"><a href="/./public/index.php" title=" Home ">Home</a></li>
+                <li class="nav_li"><a class="current_page"  href="/./src/trade.php" title=" Tradable Books ">Tradable Books</a></li>
+                <li class="nav_li"><a href="/./src/new.php" title=" Contact Us ">New Books</a></li>
+                <li class="nav_li"><a href="/./src/contact_us.php" title=" Contact Us ">Contact Us</a></li>
+                <li class="nav_li"><a href="/./src/submitBook.php" title=" Submit ">Submit Book</a></li>
+                <li class="nav_li"><a href="/./src/login.php" title=" Login ">Login</a></li>
             </ul>
         </nav>
     </div>
 </header>
 <div class="mySidebar">
-    awfa
-</div>
 
+    </div>
 
 <div class="product">
     <!--***************************************products go here *******************************-->
@@ -100,7 +100,7 @@ if(isset($_GET["action"]))
                     <div style="border:1px solid #333; background-color:#f1f1f1; border-radius:5px; padding:16px;" align="center">
                         <img src="<?php echo $row["IMAGE"]; ?>" class="img-responsive" /><br />
                         <h4 class="text-info"><?php echo $row["NAME"]; ?></h4>
-                        <h4 class="text-danger">$ <?php echo $row["BPRICE"]; ?></h4>
+                        <h4 class="text-danger">€ <?php echo $row["BPRICE"]; ?></h4>
                         <input type="text" name="quantity" class="form-control" value="1" />
                         <input type="hidden" name="hidden_name" value="<?php echo $row["NAME"]; ?>" />
                         <input type="hidden" name="hidden_price" value="<?php echo $row["BPRICE"]; ?>" />

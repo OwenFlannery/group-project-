@@ -16,7 +16,7 @@ if(isset($_POST['submit']))
 
             $my_db=my_sqli_select_db("db");
 
-            $sql="SELECT NAME FROM BOOKS WHERE title LIKE'%".$title."%'";
+            $sql="SELECT NAME FROM 'BOOKS' WHERE title LIKE'%".$title."%'";
             $result = mysqli_query($sql);
 
             while($row=mysqli_fetch_array($result))
