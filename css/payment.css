@@ -1,0 +1,19 @@
+
+.payImg {
+    width: 15%;
+}
+
+.formDiv {
+    margin-left: 35%;
+    margin-right: 35%;
+}
+
+.detailPay {
+    padding: .3rem .5rem;
+    margin: .8rem 0;
+//display: inline-block;
+    border: .1rem solid lightgrey;
+    box-sizing: border-box;
+    width: 100%;
+    display: block;
+}

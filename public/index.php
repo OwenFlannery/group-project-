@@ -48,41 +48,40 @@ if(isset($_GET["action"]))
             }
         }
     }
-
 }
 ?>
 <!DOCTYPE html>
 <html>
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/form.css">
+
 </head>
-
 <body>
-<header>
-    <!***************************************search bar and nav bar ******************************>
-    <div class="search_nav">
-        <form method="post" action="/./src/search.php?go" id="search_form">
-            <input type="text" name="search_bar" placeholder="search book titles">
-            <input type="submit" name="submit" value="search">
-        </form>
-        <nav>
-            <ul class="nav_ul">
-                <li class="nav_li"><a href="/./public/index.php" title=" Home ">Home</a></li>
-                <li class="nav_li"><a class="current_page"  href="/./src/trade.php" title=" Tradable Books ">Tradable Books</a></li>
-                <li class="nav_li"><a href="/./src/new.php" title=" Contact Us ">New Books</a></li>
-                <li class="nav_li"><a href="/./src/contact_us.php" title=" Contact Us ">Contact Us</a></li>
-                <li class="nav_li"><a href="/./src/submitBook.php" title=" Submit ">Submit Book</a></li>
-                <li class="nav_li"><a href="/./src/login.php" title=" Login ">Login</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+<!***************************************search bar and nav bar ******************************>
+<div>
+    <form method="post" action="/src/search.php?go" id="search_form">
+        <input type="text" name="search_bar" placeholder="search book titles">
+        <input type="submit" name="submit" value="search">
+    </form>
 
-<br />
+    <nav>
+        <ul class="nav_ul">
+            <li class="active"><a href="/public/index.php" title=" Home ">Home</a></li>
+            <li><a class="current_page"  href="/src/trade.php" title=" Tradable Books ">Tradable Books</a></li>
+            <li><a href="/src/new.php" title=" New Books ">New Books</a></li>
+            <li style="float:right"><a href="/src/contact_us.php" title=" Contact Us ">Contact Us</a></li>
+            <li style="float:right"><a href="/src/login.php" title=" Log In ">Log In </a></li>
+        </ul>
+    </nav>
+</div>
+<!--*****************************end of form ************************************-->
+
 <div class="container" style="width:700px;">
-    <h3 align="center">Simple PHP Mysql Shopping Cart</h3><br />
+    <h3 align="center">Books Available</h3><br />
     <?php
-    $query = "SELECT * FROM BOOKS ORDER BY NAME ASC";
+    $query = "SELECT * FROM BOOKS ORDER BY PRODUCTID ASC";
     $result = mysqli_query($connect, $query);
     if(mysqli_num_rows($result) > 0)
     {
@@ -94,7 +93,7 @@ if(isset($_GET["action"]))
                     <div style="border:1px solid #333; background-color:#f1f1f1; border-radius:5px; padding:16px;" align="center">
                         <img src="<?php echo $row["IMAGE"]; ?>" class="img-responsive" /><br />
                         <h4 class="text-info"><?php echo $row["NAME"]; ?></h4>
-                        <h4 class="text-danger">€ <?php echo $row["BPRICE"]; ?></h4>
+                        <h4 class="text-danger">$ <?php echo $row["BPRICE"]; ?></h4>
                         <input type="text" name="quantity" class="form-control" value="1" />
                         <input type="hidden" name="hidden_name" value="<?php echo $row["NAME"]; ?>" />
                         <input type="hidden" name="hidden_price" value="<?php echo $row["BPRICE"]; ?>" />
@@ -108,7 +107,6 @@ if(isset($_GET["action"]))
     ?>
     <div style="clear:both"></div>
     <br />
-    <!------------------------------------------SHOPPING CART------------------------------------------->
     <h3>Order Details</h3>
     <div class="table-responsive">
         <table class="table table-bordered">
@@ -131,8 +129,7 @@ if(isset($_GET["action"]))
                         <td><?php echo $values["item_quantity"]; ?></td>
                         <td>$ <?php echo $values["item_price"]; ?></td>
                         <td>$ <?php echo number_format($values["item_quantity"] * $values["item_price"], 2); ?></td>
-                        <td><a href="index.php?action=delete&id=<?php echo $values["item_id"]; ?>"><span class="text-danger">Remove</span></a>
-                        <a href="/./src/payment.html"><span class="text-danger">Checkout</span></a></td>
+                        <td><a href="index.php?action=delete&id=<?php echo $values["item_id"]; ?>"><span class="text-danger">Remove</span></a></td>
                     </tr>
                     <?php
                     $total = $total + ($values["item_quantity"] * $values["item_price"]);
@@ -148,8 +145,6 @@ if(isset($_GET["action"]))
             ?>
         </table>
     </div>
-
-
 </div>
 <br />
 </body>

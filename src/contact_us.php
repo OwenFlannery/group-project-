@@ -1,43 +1,42 @@
-<?php
 
-?>
-<!DOCTYPE html>
+
+
 <html>
-<body>
+    <head>
+        <title>Login</title>
 
-<header>
+        <!-- Latest compiled and minified CSS --
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >-->
+
+        <!-- Optional theme --
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" >-->
+
+        <!--<link rel="stylesheet" href="styles.css" >-->
+        <link rel="stylesheet" href="/css/nav.css">
+        <link rel="stylesheet" href="/css/form.css">
+
+        <!-- Latest compiled and minified JavaScript --
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+    </head>
+    <body>
     <!***************************************search bar and nav bar ******************************>
-    <div class="search_nav">
-        <form method="post" action="/./src/search.php?go" id="search_form">
+    <div>
+        <form method="post" action="/src/search.php?go" id="search_form">
             <input type="text" name="search_bar" placeholder="search book titles">
             <input type="submit" name="submit" value="search">
         </form>
+
         <nav>
             <ul class="nav_ul">
-                <li class="nav_li"><a href="/./public/index.php" title=" Home ">Home</a></li>
-                <li class="nav_li"><a class="current_page"  href="/./src/trade.php" title=" Tradable Books ">Tradable Books</a></li>
-                <li class="nav_li"><a href="/./src/new.php" title=" Contact Us ">New Books</a></li>
-                <li class="nav_li"><a href="/./src/contact_us.php" title=" Contact Us ">Contact Us</a></li>
-                <li class="nav_li"><a href="/./src/submitBook.php" title=" Submit ">Submit Book</a></li>
-                <li class="nav_li"><a href="/./src/login.php" title=" Login ">Login</a></li>
+                <li><a href="/public/index.php" title=" Home ">Home</a></li>
+                <li><a class="current_page"  href="trade.php" title=" Tradable Books ">Tradable Books</a></li>
+                <li><a href="new.php" title=" New Books ">New Books</a></li>
+                <li class="active" style="float:right"><a href="contact_us.php" title=" Contact Us ">Contact Us</a></li>
+                <li style="float:right"><a href="login.php" title=" Log In ">Log In </a></li>
             </ul>
         </nav>
     </div>
-</header>
-
-    <label>Please send us any feed back you have!</label>
-
-    <form>
-Email:<br>
-  <input type="text" name="email" class="con_email" style="width:200px;">
-  <br>
-Message:<br>
-  <input type="text" name="text" class="con_message"style="font-size:18pt;height:200px;width:400px;">
-</form>
-
 
 </body>
+
 </html>
-
-
-

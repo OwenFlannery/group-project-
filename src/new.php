@@ -57,32 +57,36 @@ if(isset($_GET["action"]))
     <meta charset ="utf-8">
 
     <link rel="stylesheet" type="text/css" href="/./css/page_layout.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/form.css">
 
-    <title>used books</title>
+    <title>Used Books</title>
 </head>
 <body>
-<header>
+
     <!***************************************search bar and nav bar ******************************>
-    <div class="search_nav">
-        <form method="post" action="/./src/search.php?go" id="search_form">
+    <div>
+        <form method="post" action="/src/search.php?go" id="search_form">
             <input type="text" name="search_bar" placeholder="search book titles">
             <input type="submit" name="submit" value="search">
         </form>
+
         <nav>
             <ul class="nav_ul">
-                <li class="nav_li"><a href="/./public/index.php" title=" Home ">Home</a></li>
-                <li class="nav_li"><a class="current_page"  href="/./src/trade.php" title=" Tradable Books ">Tradable Books</a></li>
-                <li class="nav_li"><a href="/./src/new.php" title=" Contact Us ">New Books</a></li>
-                <li class="nav_li"><a href="/./src/contact_us.php" title=" Contact Us ">Contact Us</a></li>
-                <li class="nav_li"><a href="/./src/submitBook.php" title=" Submit ">Submit Book</a></li>
-                <li class="nav_li"><a href="/./src/login.php" title=" Login ">Login</a></li>
+                <li><a href="/public/index.php" title=" Home ">Home</a></li>
+                <li><a class="current_page"  href="/src/trade.php" title=" Tradable Books ">Tradable Books</a></li>
+                <li class="active"><a href="/src/new.php" title=" New Books ">New Books</a></li>
+                <li style="float:right"><a href="/src/contact_us.php" title=" Contact Us ">Contact Us</a></li>
+                <li style="float:right"><a href="/src/login.php" title=" Log In ">Log In </a></li>
             </ul>
         </nav>
     </div>
-</header>
+
+
 <div class="mySidebar">
 
-    </div>
+</div>
+
 
 <div class="product">
     <!--***************************************products go here *******************************-->
@@ -96,15 +100,15 @@ if(isset($_GET["action"]))
         {
             ?>
             <div class="col-md-4">
-                <form method="post" action="trade.php?action=add&id=<?php echo $row["PRODUCTID"]; ?>">
+                <form method="post" action="new.php?action=add&id=<?php echo $row["PRODUCTID"]; ?>">
                     <div style="border:1px solid #333; background-color:#f1f1f1; border-radius:5px; padding:16px;" align="center">
                         <img src="<?php echo $row["IMAGE"]; ?>" class="img-responsive" /><br />
                         <h4 class="text-info"><?php echo $row["NAME"]; ?></h4>
-                        <h4 class="text-danger">€ <?php echo $row["BPRICE"]; ?></h4>
-                        <input type="text" name="quantity" class="form-control" value="1" />
+                        <h4 class="text-danger">$ <?php echo $row["BPRICE"]; ?></h4>
+                        <input type="text" name="quantity" value="1" />
                         <input type="hidden" name="hidden_name" value="<?php echo $row["NAME"]; ?>" />
                         <input type="hidden" name="hidden_price" value="<?php echo $row["BPRICE"]; ?>" />
-                        <input type="submit" name="add_to_cart" style="margin-top:5px;" class="btn btn-success" value="Add to Cart" />
+                        <input type="submit" name="add_to_cart" style="margin-top:5px;" value="Add to Cart" />
                     </div>
                 </form>
             </div>
@@ -135,7 +139,7 @@ if(isset($_GET["action"]))
                     <td><?php echo $values["item_quantity"]; ?></td>
                     <td>$ <?php echo $values["item_price"]; ?></td>
                     <td>$ <?php echo number_format($values["item_quantity"] * $values["item_price"], 2); ?></td>
-                    <td><a href="trade.php?action=delete&id=<?php echo $values["item_id"]; ?>"><span class="text-danger">Remove</span></a></td>
+                    <td><a href="new.php?action=delete&id=<?php echo $values["item_id"]; ?>"><span class="text-danger">Remove</span></a></td>
                 </tr>
                 <?php
                 $total = $total + ($values["item_quantity"] * $values["item_price"]);
