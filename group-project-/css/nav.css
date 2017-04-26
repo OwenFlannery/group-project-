@@ -1,0 +1,48 @@
+body {
+    /*background-color: green;*/
+}
+/*
+.nav_li {
+	margin: 0;
+	padding: 0;
+	border: 0.1rem solid black;
+	list-style-type: none;
+	width: 10rem;
+	overflow: hidden;
+}
+*/
+ul {
+    margin: 0;
+    padding: 0;
+    border: 0.1rem solid black;
+    list-style-type: none;
+//width: 10rem;
+    overflow: hidden;
+}
+
+li a {
+    color: black;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+li a:hover {
+    background-color: darkorange;
+}
+
+li {
+    background-color: orange;
+    float: left;
+}
+
+.active {
+    background-color: green;
+}
+
+.spine{
+    height: 20px;
+}
+

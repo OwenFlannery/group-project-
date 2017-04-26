@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+
+    <title></title>
+
+
+    <link rel="stylesheet" href="/./css/form.css" />
+    <link rel="stylesheet" href="/./css/nav.css" />
+    <link rel="stylesheet" href="/./css/payment.css" />
+    <link rel="stylesheet" href="/./css/trade.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+
+
+    <script type="text/javascript">
+        function welcome()
+        {/*-------------------------------------------------script to create a popup for error message----------------------------------*/
+            alert("A Error has occored please review your details ");
+        }
+    </script>
+
+</head>
+
+<body>
+<header>
+    <!***************************************search bar and nav bar ******************************>
+    <div class="search_nav">
+        <form method="post" action="/./src/search.php?go" id="search_form">
+            <input type="text" name="search_bar" placeholder="search book titles">
+            <input type="submit" name="submit" value="search">
+        </form>
+        <nav>
+            <ul class="nav_ul">
+                <li><a href="/./public/index.php" title=" Home ">Home</a></li>
+                <li><a class="current_page"  href="/./src/trade.php" title=" Tradable Books ">Tradable Books</a></li>
+                <li><a href="/./src/new.php" title=" Contact Us ">New Books</a></li>
+                <li style="float:right"><a href="/./src/submitBook.php" title=" Submit ">Submit Book</a></li>
+                <li><a href="/./src/contact_us.php" title=" Contact Us ">Contact Us</a></li>
+                <li style="float:right"><a href="/./src/login.php" title=" Login ">Login</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>>
+<div>
+    <section class="login">
+        <form action="paymentSuc.html"  methods="post">
+
+            <h1 style="margin-left: 30%; margin-right: 35%">  Payment Form</h1>
+
+            <div class="formDiv">
+            <input type="radio" name="visa"/>
+            <img src="/./images/visa.jpg" class="payImg">
+
+            <input type="radio" name="mastercard"/>
+            <img src="/./images/m_card.jpg" class="payImg">
+
+            <input type="radio" name="visa_debt"/>
+            <img src="/./images/v_debt.jpg" class="payImg">
+            </div>
+            <div class="formDiv">
+            Email:
+            <input type=email" size="10" maxlength="40" name="email" class="detailPay">
+                </div>
+            <div class="formDiv">
+            Address line 1:
+            <input type=address" size="10" maxlength="40" name="address1" class="detailPay">
+
+            Address line 2:
+            <input type=email" size="10" maxlength="40" name="address2" class="detailPay">
+
+            Address line 3:
+            <input type=email" size="10" maxlength="40" name="address3" class="detailPay">
+
+            </div>
+            <div class="formDiv">
+            Card number:
+            <input min ="16" size="16" maxlength="16" name="card_number" class="detailPay">
+            </div>
+            <div class="formDiv">
+            Expiry date:
+            <input type="date" size="10" maxlength="40" name="ex_date" class="detailPay">
+            </div>
+            <div class="formDiv">
+            Security code:
+            <input min="3" size="3" maxlength="3" name="security_code"class="detailPay">
+            </div>
+            <section class ="formDiv" >
+            <input type="submit" value="submit"> <input type="reset" value="reset">
+            <br>
+            </section>
+        </form>
+    </section>
+</div>
+
+</body>
+
+<footer>
+
+</footer>
+
+</html>
