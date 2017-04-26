@@ -1,0 +1,42 @@
+
+.log {
+    margin-left: 35%;
+    margin-right: 35%;
+}
+
+.detailForm {
+    /*  width: 100%;*/
+    padding: .3rem .5rem;
+    margin: .8rem 0;
+//display: inline-block;
+    border: .1rem solid lightgrey;
+    box-sizing: border-box;
+    width: 100%;
+    display: block;
+}
+
+button {
+    background-color: orange;
+    color: white;
+    padding: .3rem .5rem;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: auto;
+}
+
+.formHeading {
+    text-align: center;
+}
+.formDiv {
+    text-align: center;
+}
+/**********************************************FOR SUBMTI FILE *************************/
+.input {
+    width: 100%;
+    font-size: 18px;
+    height: 200px;
+
+}
+
+
