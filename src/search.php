@@ -9,14 +9,14 @@ if(isset($_POST['submit']))
 {
     if (isset($_GET['go']))
     {
-        if(preg_match("^/[A-Za-z]+/^",$_POST['NAME']))
+        if(preg_match("^/[A-Za-z]+/",$_POST['NAME']))
         {
             $title=$_POST['NAME'];
             $connect = mysqli_connect("localhost", "root", "root", "db")or die ('unable to connect to database: '.mysqli_error());
 
             $my_db=my_sqli_select_db("db");
 
-            $sql="SELECT NAME FROM BOOKS WHERE title LIKE'%".$title."%'";
+            $sql="SELECT NAME FROM 'BOOKS' WHERE title LIKE'%".$title."%'";
             $result = mysqli_query($sql);
 
             while($row=mysqli_fetch_array($result))
@@ -34,3 +34,4 @@ if(isset($_POST['submit']))
     }
 }
 ?>
+
